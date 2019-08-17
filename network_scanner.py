@@ -13,7 +13,6 @@ def createPacket(ip):
 	return(arp_request_broadcast)
 
 
-createPacket('192.168.1.0/24')
 
 def transmitPacket(packet):
 	success_list,failure_list = scapy.srp(packet, timeout=1);
