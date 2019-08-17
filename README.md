@@ -3,5 +3,8 @@ This is basic network scanner that can scan the all devices which are in the con
 Follow the isntructions
 clone the repository and go into the reposistory folder.
 install python dependencies using requirements,txt with the follwing command.
+
+
 pip install -r requirements.txt
+
 sudo python networkscanner.py
