@@ -8,3 +8,12 @@ install python dependencies using requirements,txt with the follwing command.
 pip install -r requirements.txt
 
 sudo python network_scanner.py
+
+
+
+Traceback (most recent call last):
+  File "network_scanner.py", line 1, in <module>
+    import scapy.all as scapy
+ModuleNotFoundError: No module named 'scapy'
+ If you had this problem download scapy from this command
+  sudo apt-get install python-scapy
