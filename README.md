@@ -5,7 +5,7 @@ clone the repository and go into the reposistory folder.
 install python dependencies using requirements,txt with the follwing command.
 
 
-pip install -r requirements.txt
+pip3 install -r requirements.txt
 
 sudo python network_scanner.py
 
