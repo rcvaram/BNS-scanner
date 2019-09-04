@@ -7,7 +7,7 @@ install python dependencies using requirements,txt with the follwing command.
 
 pip3 install -r requirements.txt
 
-sudo python network_scanner.py
+sudo python3 network_scanner.py
 
 
 
