@@ -8,9 +8,9 @@ install python dependencies using requirements,txt with the follwing command.
 
 pip3 install -r requirements.txt
 
-sudo python3 network_scanner.py
+sudo python3 network_scanner.py -t [IP address range]
 
-
+in the IP address range variable, you want to put your range in the CIDR notation(192.168.1.1/24)
 
 Traceback (most recent call last):
   File "network_scanner.py", line 1, in <module>
