@@ -1,11 +1,5 @@
-from urllib.request import urlopen
-from prettytable import PrettyTable
-
 import scapy.all as scapy
-from scapy.modules import nmap
 import optparse
-
-NMAP_OS_FINGERPRINT_URL = 'https://raw.githubusercontent.com/nmap/nmap/9efe1892/nmap-os-fingerprints'
 
 
 def get_arguments():
@@ -28,11 +22,7 @@ def transmit_packet(packet):
 
 
 def get_os(ip_addr):
-    open('nmap-os-fingerprints', 'wb').write(
-        urlopen(NMAP_OS_FINGERPRINT_URL).read())
-    scapy.conf.nmap_base = 'nmap-os-fingerprints'
-    score, guess = nmap.nmap_fp(ip_addr)
-    return {"score": round(score, 2), "guess": guess[0]}
+    pass
 
 
 def parse_response(success_list):
@@ -40,19 +30,14 @@ def parse_response(success_list):
         {
             "ip": success[1].psrc,
             "mac": success[1].hwsrc,
-            "os": get_os(success[1].psrc)
         } for success in success_list
     ]
 
 
 def print_analysis(element_entries):
-    result_table = PrettyTable()
-    result_table.field_names = ["IP", "MAC Address", "GUESS OPERATING SYSTEM", "SCORE"]
-    for element in element_entries:
-        result_table.add_row([element["ip"], element['mac'], element['os'].get('guess'), element['os'].get('score')])
-
-    result_table.sortby = "IP"
-    print(result_table)
+    print("IP\t\t\tMAC Address\n............................................");
+    for element in entries:
+        print(element["ip"] + "\t\t" + element['mac'] + "\n")
 
 
 options = get_arguments()

@@ -3,33 +3,6 @@ This is basic network scanner that can scan the all devices which are in the con
 Follow the isntructions
 clone the repository and go into the reposistory folder.
 
-#### Install nmap on your machine
-We use nmap to guess Operating System using nmap os fingerprint. for install nmap on your machine, 
-you can run following command:
-
-Debian or Ubuntu base using apt:
-```bash
-sudo apt install nmap
-```
-Arch base Linux
-```bash
-sudo pacman -Syu nmap
-```
-Fedora
-```bash
-sudo dnf install nmap
-```
-
-mac
-```
-https://nmap.org/book/inst-macosx.html
-```
-
-windows
-```
-https://nmap.org/book/inst-windows.html
-```
-
 #### Installing dependencies
 
 install python dependencies using requirements,txt with the follwing command.
