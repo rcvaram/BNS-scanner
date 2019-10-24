@@ -1,6 +1,10 @@
 import scapy.all as scapy
 import optparse
 
+from scapy.layers.inet import IP, ICMP
+
+LINUX_TTL = 64
+
 
 def get_arguments():
     parser = optparse.OptionParser()
@@ -22,7 +26,13 @@ def transmit_packet(packet):
 
 
 def get_os(ip_addr):
-    pass
+    ans = scapy.sr1(IP(dst=str(ip_addr)) / ICMP(), timeout=1, verbose=0)
+    if not ans:
+        return "Not responding, probably Using Firewall"
+    if ans.ttl <= LINUX_TTL:
+        return "Linux/Unix"
+    else:
+        return "Windows"
 
 
 def parse_response(success_list):
@@ -35,9 +45,10 @@ def parse_response(success_list):
 
 
 def print_analysis(element_entries):
-    print("IP\t\t\tMAC Address\n............................................");
+    print("IP\t\t\tMAC Address\t\t\tOPERATING SYSTEM")
+    print("."*100)
     for element in entries:
-        print(element["ip"] + "\t\t" + element['mac'] + "\n")
+        print(element["ip"] + "\t\t" + element['mac'] + "\t\t" + get_os(element["ip"]) + "\n")
 
 
 options = get_arguments()
