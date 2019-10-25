@@ -11,6 +11,7 @@ pip3 install -r requirements.txt
 
 sudo python3 network_scanner.py -t [IP address range]
 
+![Alt text](https://user-images.githubusercontent.com/11618498/67461951-c265e480-f668-11e9-9598-8eb996cf0d25.png)
 in the IP address range variable, you want to put your range in the CIDR notation(192.168.1.1/24)
 
 ```bash
@@ -26,3 +27,5 @@ ModuleNotFoundError: No module named 'scapy'
 sudo apt-get install python-scapy
 ```
 More details can be found in https://medium.com/@cvaram96/creating-own-network-scanner-using-python-f11a50a5ff77?source=friends_link&sk=64fbe1a530bff1a6ace92d778b232a97
+
+
